@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Kulim+Park&display=swap');
+
+.profile-container {
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    padding: 0;
+    font-family: 'Kulim Park', sans-serif;
+    max-width: 600px;
+}
+
+
+.profile-name {
+  display: block;
+    margin-top: 600px;
+    padding-top: 20px;
+    font-size: 50px;
+    margin: 0;
+    text-shadow: 3px 3px 0px #000000;
+}
+
+.profile-contenido{
+  padding-top: 100px;
+  font-size: 30px;
+  margin: 0;
+  text-shadow: 3px 3px 0px #ffffff;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.profile-matricula {
+    padding-top: 10px;
+    font-size: 25px;
+    margin: 0 0 10px;
+    text-align: 'center' #ff5100;
+    text-shadow: 3px 3px 0px #ffffff;
+}
+.profile-image {
+  vertical-align: top;
+  margin-top: 200px;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  transform: translate(-10%, -20%);
+  z-index: 1;
+  }
