@@ -5,13 +5,13 @@ import CommentBox from './coments.component.js';
 const ImageCard = ({ imageUrl }) => {
   const [showDetails, setShowDetails] = useState(false);
   const [reactionsCount, setReactionsCount] = useState(0);
-  const [commentText, setCommentText] = useState('');
+
 
   const handleImageClick = () => {
     setShowDetails(!showDetails);
   };
 
-  const handleCommentChange = (event) => {
+ /* const handleCommentChange = (event) => {
     setCommentText(event.target.value);
   };
 
@@ -23,7 +23,7 @@ const ImageCard = ({ imageUrl }) => {
       setCommentText('');
     }
   };
-
+/**/
   return (
     <div className="image-card" onClick={handleImageClick}>
       <img src={imageUrl} alt="Imagen" />

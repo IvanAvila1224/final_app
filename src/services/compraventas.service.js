@@ -20,4 +20,5 @@ class CompraDataService {
   }
 }
 
-export default new CompraDataService();
+const DataService = new CompraDataService();
+export default DataService;
