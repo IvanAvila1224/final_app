@@ -45,7 +45,9 @@ export default class CompraDataService extends Component {
             .child(file.name)
             .getDownloadURL()
             .then((myurl) =>  { 
-                    this.state.url= myurl ;
+              this.setState({
+                file: myurl,
+              });
              });
 
     });
