@@ -3,7 +3,6 @@ import "./styles/App.css";
 import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./styles/Images.css"
-
 import Profile from "./components/home_compraventa";
 import AddCompra from "./components/add-compraventa.component";
 import CompraList from "./components/compraventa-list.component";

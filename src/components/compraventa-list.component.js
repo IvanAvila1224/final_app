@@ -66,39 +66,39 @@ export default class CompraList extends Component {
 
     return (
       <div className="list row">
-        <div className="col-md-6">
+      <div className="col-md-6">
 
-          <ul className="list-group">
-            {compraventa &&
-              compraventa.map((compraventa, index) => (
-                <li
-                  className={ "list-group-item " + (index === currentIndex ? "active" : "") }
-                  onClick={() => this.setActiveTutorial(compraventa, index)}
-                  key={index}
-                >
-                  {compraventa.title}
-                </li>
-              ))}
-          </ul>
-          <div className="image-gallery">
-      <h1>Galería de imágenes</h1>
-      <ImageGallery />
-    </div>
-        </div>
-        <div className="col-md-6">
-          {currentcompraventa ? (
-            <Compraventa
-              tutorial={currentcompraventa}
-              refreshList={this.refreshList}
-            />
-          ) : (
-            <div>
-              <br />
-              <p>Haz click en la  Compraventa...</p>
-            </div>
-          )}
-        </div>
+        <ul className="list-group">
+          {compraventa &&
+            compraventa.map((compraventa, index) => (
+              <li
+                className={ "list-group-item " + (index === currentIndex ? "active" : "") }
+                onClick={() => this.setActiveTutorial(compraventa, index)}
+                key={index}
+              >
+                {compraventa.title}
+              </li>
+            ))}
+        </ul>
+        <div className="image-gallery">
+    <h1>Galería de imágenes</h1>
+    <ImageGallery />
+  </div>
       </div>
-    );
-  }
+      <div className="col-md-6">
+        {currentcompraventa ? (
+          <Compraventa
+            tutorial={currentcompraventa}
+            refreshList={this.refreshList}
+          />
+        ) : (
+          <div>
+            <br />
+            <p>Haz click en la  Compraventa...</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 }

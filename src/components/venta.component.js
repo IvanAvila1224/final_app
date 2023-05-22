@@ -11,19 +11,6 @@ const ImageCard = ({ imageUrl }) => {
     setShowDetails(!showDetails);
   };
 
- /* const handleCommentChange = (event) => {
-    setCommentText(event.target.value);
-  };
-
-  const handleCommentSubmit = () => {
-    if (commentText.trim()) {
-      // Envía el comentario
-      console.log(commentText);
-      // Limpia el campo de texto
-      setCommentText('');
-    }
-  };
-/**/
   return (
     <div className="image-card" onClick={handleImageClick}>
       <img src={imageUrl} alt="Imagen" />
