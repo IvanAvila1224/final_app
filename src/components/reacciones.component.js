@@ -27,27 +27,27 @@ const ReactionsComponent = ({ reactionsCount, setReactionsCount }) => {
     <button onClick={(e) => {
       e.preventDefault();
       handleReactionClick();
-      saveLike(e, 'like');
+      saveLike(e, 1);
     }} className='reaction-like'></button>
     <button onClick={(e) => {
       e.preventDefault();
       handleReactionClick();
-      saveLike(e, 'love');
+      saveLike(e, 1);
     }} className='reaction-love'></button>
     <button onClick={(e) => {
       e.preventDefault();
       handleReactionClick();
-      saveLike(e, 'haha');
+      saveLike(e, 1);
     }} className='reaction-haha'></button>
     <button onClick={(e) => {
       e.preventDefault();
       handleReactionClick();
-      saveLike(e, 'wow');
+      saveLike(e, 1);
     }} className='reaction-wow'></button>
     <button onClick={(e) => {
       e.preventDefault();
       handleReactionClick();
-      saveLike(e, 'angry');
+      saveLike(e, 1);
     }} className='reaction-angry'></button>
   </div>
 
