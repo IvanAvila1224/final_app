@@ -4,7 +4,7 @@ import CommentBox from './coments.component.js';
 
 const ImageCard = ({ imageUrl }) => {
   const [showDetails, setShowDetails] = useState(false);
-  const [reactionsCount] = useState(0);
+  const [reactionsCount, ] = useState(0);
 
 
   const handleImageClick = () => {
