@@ -1,57 +1,67 @@
-import React from 'react';
+import React from "react";
 import '../styles/clip.css'
-import KafkaService from "../services/kakfa.service";
+import kafkaService from "../services/kakfa.service";
 
-
-const ReactionsComponent = ({ reactionsCount, setReactionsCount }) => {
-  const handleReactionClick = () => {
-    setReactionsCount(reactionsCount + 1);
-  };
-
+function ReactionsComponent() {
   function saveLike(e, status) {
   
-    let data = {
-      id: 0,
-      status: status
-    };
- 
-    console.log(JSON.stringify(data));
- 
-    KafkaService.reaction("i-love-adsoftsito");
-    e.preventDefault();
-}
-
+     let data = {
+       id: 0,
+       status: status
+     };
+  
+     console.log(JSON.stringify(data));
+  
+     kafkaService.reaction("i-love-adsoftsito");
+     e.preventDefault();
+ }
 
   return (
-    <div>
-    <button onClick={(e) => {
-      e.preventDefault();
-      handleReactionClick();
-      saveLike(e, 1);
-    }} className='reaction-like'></button>
-    <button onClick={(e) => {
-      e.preventDefault();
-      handleReactionClick();
-      saveLike(e, 1);
-    }} className='reaction-love'></button>
-    <button onClick={(e) => {
-      e.preventDefault();
-      handleReactionClick();
-      saveLike(e, 1);
-    }} className='reaction-haha'></button>
-    <button onClick={(e) => {
-      e.preventDefault();
-      handleReactionClick();
-      saveLike(e, 1);
-    }} className='reaction-wow'></button>
-    <button onClick={(e) => {
-      e.preventDefault();
-      handleReactionClick();
-      saveLike(e, 1);
-    }} className='reaction-angry'></button>
-  </div>
-
+    <div class="reactions">
+      <div class="reaction-like" onClick={(e) => {
+                    e.preventDefault();
+                    saveLike(e, 1)
+                      
+                    }
+                } 
+></div>
+      <div class="reaction-love"onClick={(e) => {
+                    e.preventDefault();
+                    saveLike(e, 1)
+                      
+                    }
+                } 
+></div>
+      <div class="reaction-haha"onClick={(e) => {
+                    e.preventDefault();
+                    saveLike(e, 1)
+                      
+                    }
+                } 
+></div>
+      <div class="reaction-wow"onClick={(e) => {
+                    e.preventDefault();
+                    saveLike(e, 1)
+                      
+                    }
+                } 
+></div>
+      <div class="reaction-sad"onClick={(e) => {
+                    e.preventDefault();
+                    saveLike(e, 1)
+                      
+                    }
+                } 
+></div>
+      <div class="reaction-angry"onClick={(e) => {
+                    e.preventDefault();
+                    saveLike(e, 1)
+                      
+                    }
+                } 
+></div>
+    </div>
   );
-};
+}
 
 export default ReactionsComponent;
