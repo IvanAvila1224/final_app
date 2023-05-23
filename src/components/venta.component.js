@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactionsComponent from './reacciones.component.js';
+import Reactions from './reacciones';
 import CommentBox from './coments.component.js';
 
 const ImageCard = ({ imageUrl }) => {
@@ -16,14 +16,12 @@ const ImageCard = ({ imageUrl }) => {
       <img src={imageUrl} alt="Imagen" />
       {showDetails && (
         <>
-          <ReactionsComponent
-            reactionsCount={reactionsCount}
-            setReactionsCount={setReactionsCount}
-          />
+          
          
         </>
       )}
       <div>Cantidad de reacciones: {reactionsCount}</div>
+      <Reactions/>
       <CommentBox/>
     </div>
     
