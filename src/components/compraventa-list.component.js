@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import CompraDataService from "../services/compraventas.service";
-
-import ImageGallery from "./images.component";
 import Compraventa from "./compraventa.component";
+import "../styles/App.css";
 
 export default class CompraList extends Component {
+  
+
   constructor(props) {
     super(props);
     this.refreshList = this.refreshList.bind(this);
@@ -60,11 +61,12 @@ export default class CompraList extends Component {
       currentIndex: index,
     });
   }
-
+  
   render() {
     const { compraventa, currentcompraventa, currentIndex } = this.state;
 
     return (
+      
       <div className="list row">
       <div className="col-md-6">
 
@@ -80,10 +82,6 @@ export default class CompraList extends Component {
               </li>
             ))}
         </ul>
-        <div className="image-gallery">
-    <h1>Galería de imágenes</h1>
-    <ImageGallery />
-  </div>
       </div>
       <div className="col-md-6">
         {currentcompraventa ? (

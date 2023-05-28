@@ -1,9 +1,8 @@
 body{
     background-image: url("../images/fondo1.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
     color: white;
-    overflow-y: hidden;
+    overflow:auto;
     backdrop-filter: blur(5px);
   }
   
@@ -43,4 +42,47 @@ body{
   
   .activate{
     color: #dc5b51;
+  }
+
+  .boton-login {
+    background-color: #253bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .boton-email {
+    background-color: #189418;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .boton-logout {
+    position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  background-color: #e63946;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
   }
