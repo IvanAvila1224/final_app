@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { auth, provider } from "./config";
-import { signInWithPopup, signInWithEmailAndPassword} from "firebase/auth";
+import { signInWithPopup, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import "./styles/App.css";
 import Ventas from "./components/ventasUpdate";
 
@@ -36,6 +36,16 @@ function Signin() {
     }
   };
 
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        setEmail('');
+        localStorage.removeItem("email");
+      })
+      .catch((error) => {
+        console.log("Error occurred during sign-out:", error);
+      });
+  };
 
   useEffect(() => {
     const storedEmail = localStorage.getItem('email');
@@ -49,6 +59,8 @@ function Signin() {
       {email ? (
         <div>
           <h2>Welcome, {email}!</h2>
+          <button onClick={handleSignOut}>
+          </button>
           <Ventas />
         </div>
       ) : (
