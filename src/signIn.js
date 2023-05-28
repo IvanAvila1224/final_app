@@ -59,7 +59,8 @@ function Signin() {
       {email ? (
         <div>
           <h2>Welcome, {email}!</h2>
-          <button onClick={handleSignOut}>
+          <button className="boton-logout" onClick={handleSignOut}>
+            Logout
           </button>
           <Ventas />
         </div>
