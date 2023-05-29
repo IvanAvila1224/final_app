@@ -12,6 +12,7 @@ class KafkaService {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        console.log('hola')
       })
       .catch((err) => {
         console.log(err.message);
