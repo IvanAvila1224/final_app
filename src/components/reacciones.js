@@ -14,7 +14,7 @@ class Reactions extends Component {
     };
   }
 
-  saveLike(e, status,reaction) {
+saveLike(e, status,reaction) {
   
     let data = {
       id: 0,
@@ -23,7 +23,7 @@ class Reactions extends Component {
  
     console.log(JSON.stringify(data));
  
-    KafkaService.reaction(this.props.email,this.props.id,reaction);
+    kafkaService.reaction(this.props.email,this.props.id,reaction);
     e.preventDefault();
   }
 
