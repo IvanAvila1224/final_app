@@ -14,18 +14,18 @@ class Reactions extends Component {
     };
   }
 
-  saveLike(e, status) {
+  saveLike(e, status,reaction) {
   
-     let data = {
-       id: 0,
-       status: status
-     };
-  
-     console.log(JSON.stringify(data));
-  
-     kafkaService.reaction("id","comments","reactions");
-     e.preventDefault();
- }
+    let data = {
+      id: 0,
+      status: status
+    };
+ 
+    console.log(JSON.stringify(data));
+ 
+    KafkaService.reaction(this.props.email,this.props.id,reaction);
+    e.preventDefault();
+  }
 
   
 
