@@ -1,6 +1,6 @@
 class KafkaService {
   
-   url = 'https://nodeproducer-service-v2-ivanavila1224.cloud.okteto.net/';
+   url = 'https://nodeproducer-service-v2-ivanavila1224.cloud.okteto.net';
  
    reaction = async (userid, objectid, reactionid) => {
     await fetch(this.url + '/reactions?userid=' + userid+'&objectid='+objectid +'&reactionid='+reactionid, {
