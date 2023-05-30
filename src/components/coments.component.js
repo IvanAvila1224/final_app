@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import kafkaService from '../services/kakfa.service';
+import '../styles/clip.css'
 
 class CommentBox extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class CommentBox extends Component {
       comments: []
     };
   }
-  
+
   handleSubmit = (event) => {
     event.preventDefault();
     const comment = this.refs.comment.value.trim();
@@ -21,19 +21,6 @@ class CommentBox extends Component {
       };
     });
     this.refs.commentForm.reset();
-    // Llamar a la función saveComment para enviar el comentario
-    this.saveComment(1,comment);
-  }
-  
-  saveComment = (status, comment) => {
-    let data = {
-      id: 0,
-      status: status
-    };
- 
-    console.log(JSON.stringify(data));
- 
-    kafkaService.comment(this.props.email, this.props.id, comment);
   }
 
   render() {
