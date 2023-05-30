@@ -23,7 +23,7 @@ saveLike(e, status,reaction) {
  
     console.log(JSON.stringify(data));
  
-    kafkaService.reaction("id", "message", "reaction");
+    kafkaService.reaction(this.props.email,this.props.id,reaction);
     e.preventDefault();
   }
 
