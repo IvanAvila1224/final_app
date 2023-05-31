@@ -26,7 +26,7 @@ const ImageGallery = () => {
   return (
     <div className="image-gallery">
       {imageUrls.map((url) => (
-        <ImageCard imageUrl={url} key={url} />
+        <ImageCard imageUrl={url} key={url}  email={this.props.email}/>
       ))}
     </div>
   );

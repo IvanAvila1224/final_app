@@ -62,7 +62,7 @@ function Signin() {
           <button className="boton-logout" onClick={handleSignOut}>
             Logout
           </button>
-          <Ventas />
+          <Ventas email={email} />
         </div>
       ) : (
         <div>

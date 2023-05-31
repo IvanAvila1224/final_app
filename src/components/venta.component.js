@@ -21,7 +21,7 @@ const ImageCard = ({ imageUrl }) => {
         </>
       )}
       <div>Cantidad de reacciones: {reactionsCount}</div>
-      <Reactions/>
+      <Reactions id={imageUrl} email={this.props.email}/>
       <CommentBox/>
     </div>
     

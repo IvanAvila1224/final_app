@@ -16,17 +16,14 @@ class Reactions extends Component {
   }
 
   saveLike(e, status, reaction) {
-    const { userid, objectid } = this.props;
-
     let data = {
-      userid: userid,
-      objectid: objectid,
-      reactionid: status
+      id:0,
+      status:status
     };
 
     console.log(JSON.stringify(data));
 
-    kafkaService.reaction(userid, objectid, status);
+    kafkaService.reaction(this.props.email, this.props.id, reaction);
     e.preventDefault();
   }
 
@@ -102,7 +99,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleLoveClick();
             e.preventDefault();
-            this.saveLike(e, 2, 'love');
+            this.saveLike(e, 1, 'love');
           }}
         >
           <span role="img" aria-label="love">
@@ -115,7 +112,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleLaughClick();
             e.preventDefault();
-            this.saveLike(e, 3, 'laugh');
+            this.saveLike(e, 1, 'laugh');
           }}
         >
           <span role="img" aria-label="laugh">
@@ -128,7 +125,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleCryClick();
             e.preventDefault();
-            this.saveLike(e, 4, 'cry');
+            this.saveLike(e, 1, 'cry');
           }}
         >
           <span role="img" aria-label="cry">
@@ -141,7 +138,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleWowClick();
             e.preventDefault();
-            this.saveLike(e, 5, 'wow');
+            this.saveLike(e, 1, 'wow');
           }}
         >
           <span role="img" aria-label="wow">
@@ -154,7 +151,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleAngryClick();
             e.preventDefault();
-            this.saveLike(e, 6, 'angry');
+            this.saveLike(e, 1, 'angry');
           }}
         >
           <span role="img" aria-label="angry">

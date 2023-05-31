@@ -8,7 +8,7 @@ const Ventas = () => {
   return (
       <div className="image-gallery">
         <h1>Galería de imágenes</h1>
-        <ImageGallery />
+        <ImageGallery email={this.props.email}/>
       </div>
     
   );
