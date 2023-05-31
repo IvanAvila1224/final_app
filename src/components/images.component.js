@@ -3,7 +3,7 @@ import { storage } from "../firebase"
 import '../styles/Images.css';
 import ImageCard from './venta.component';
 
-const ImageGallery = () => {
+const ImageGallery = (props) => {
   const [imageUrls, setImageUrls] = useState([]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const ImageGallery = () => {
   return (
     <div className="image-gallery">
       {imageUrls.map((url) => (
-        <ImageCard imageUrl={url} key={url}  email={this.props.email}/>
+        <ImageCard imageUrl={url} key={url}  email={props.email}/>
       ))}
     </div>
   );

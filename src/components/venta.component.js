@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import Reactions from './reacciones';
 import CommentBox from './coments.component.js';
 
-const ImageCard = ({ imageUrl }) => {
+const ImageCard = (props) => {
   const [showDetails, setShowDetails] = useState(false);
   const [reactionsCount, ] = useState(0);
-
 
   const handleImageClick = () => {
     setShowDetails(!showDetails);
@@ -21,7 +20,7 @@ const ImageCard = ({ imageUrl }) => {
         </>
       )}
       <div>Cantidad de reacciones: {reactionsCount}</div>
-      <Reactions id={imageUrl} email={this.props.email}/>
+      <Reactions id={props.imageUrl} email={props.email}/>
       <CommentBox/>
     </div>
     

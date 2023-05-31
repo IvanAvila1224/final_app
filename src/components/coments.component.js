@@ -8,6 +8,10 @@ class CommentBox extends Component {
       comments: []
     };
   }
+
+  constructor(props) {
+    super(props);
+  }
   
   handleSubmit = (event) => {
     event.preventDefault();
