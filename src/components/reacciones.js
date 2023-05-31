@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import kafkaService from '../services/kakfa.service';
+import kafkaService from '../services/kafka.service';
 
 class Reactions extends Component {
   constructor(props) {
@@ -24,7 +24,9 @@ class Reactions extends Component {
       reactionid: reactionid
     };
 
-    kafkaService.reaction(data); // Llama a la función reaction pasando los datos
+    console.log(JSON.stringify(data));
+
+    kafkaService.reaction(userid, objectid, reactionid); // Llama a la función reaction pasando los datos
     e.preventDefault();
   }
 
@@ -69,7 +71,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleLikeClick();
             e.preventDefault();
-            this.saveLike(e, 1);
+            this.saveLike(e, 1, reaction);
           }}
         >
           <span role="img" aria-label="like">
@@ -82,7 +84,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleLoveClick();
             e.preventDefault();
-            this.saveLike(e, 2);
+            this.saveLike(e, 2, reaction);
           }}
         >
           <span role="img" aria-label="love">
@@ -95,7 +97,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleLaughClick();
             e.preventDefault();
-            this.saveLike(e, 3);
+            this.saveLike(e, 3, reaction);
           }}
         >
           <span role="img" aria-label="laugh">
@@ -108,7 +110,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleCryClick();
             e.preventDefault();
-            this.saveLike(e, 4);
+            this.saveLike(e, 4, reaction);
           }}
         >
           <span role="img" aria-label="cry">
@@ -121,7 +123,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleWowClick();
             e.preventDefault();
-            this.saveLike(e, 5);
+            this.saveLike(e, 5, reaction);
           }}
         >
           <span role="img" aria-label="wow">
@@ -134,7 +136,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleAngryClick();
             e.preventDefault();
-            this.saveLike(e, 6);
+            this.saveLike(e, 6, reaction);
           }}
         >
           <span role="img" aria-label="angry">
