@@ -12,7 +12,7 @@ const ImageCard = (props) => {
 
   return (
     <div className="image-card" onClick={handleImageClick}>
-      <img src={imageUrl} alt="Imagen" />
+      <img src={props.imageUrl} alt="Imagen" />
       {showDetails && (
         <>
           
@@ -21,7 +21,7 @@ const ImageCard = (props) => {
       )}
       <div>Cantidad de reacciones: {reactionsCount}</div>
       <Reactions id={props.imageUrl} email={props.email}/>
-      <CommentBox/>
+      <CommentBox id={props.imageUrl} email={props.email}/>
     </div>
     
   );

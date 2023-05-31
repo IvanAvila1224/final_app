@@ -7,7 +7,7 @@ const Ventas = (props) => {
 
   return (
       <div className="image-gallery">
-        <h1>Galería de imágenes</h1>
+        <h1>Galería de imágenes {props.email}</h1>
         <ImageGallery email={props.email}/>
       </div>
     
