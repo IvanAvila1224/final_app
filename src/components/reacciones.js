@@ -10,48 +10,66 @@ class Reactions extends Component {
       laughCount: 0,
       cryCount: 0,
       wowCount: 0,
-      angryCount: 0
+      angryCount: 0,
+      selectedReaction: null
     };
   }
 
   saveLike(e, status, reaction) {
-    const { userid, objectid } = this.props; // Obtén el userid y objectid de tus props
-    const reactionid = reaction; // El parámetro reaction ya contiene el reactionid
+    const { userid, objectid } = this.props;
 
     let data = {
       userid: userid,
       objectid: objectid,
-      reactionid: reactionid
+      reactionid: status
     };
 
     console.log(JSON.stringify(data));
 
-    kafkaService.reaction(userid, objectid, reactionid); // Llama a la función reaction pasando los datos
+    kafkaService.reaction(userid, objectid, status);
     e.preventDefault();
   }
 
   handleLikeClick = () => {
-    this.setState({ likeCount: this.state.likeCount + 1 });
+    this.setState({
+      likeCount: this.state.likeCount + 1,
+      selectedReaction: 1
+    });
   };
 
   handleLoveClick = () => {
-    this.setState({ loveCount: this.state.loveCount + 1 });
+    this.setState({
+      loveCount: this.state.loveCount + 1,
+      selectedReaction: 2
+    });
   };
 
   handleLaughClick = () => {
-    this.setState({ laughCount: this.state.laughCount + 1 });
+    this.setState({
+      laughCount: this.state.laughCount + 1,
+      selectedReaction: 3
+    });
   };
 
   handleCryClick = () => {
-    this.setState({ cryCount: this.state.cryCount + 1 });
+    this.setState({
+      cryCount: this.state.cryCount + 1,
+      selectedReaction: 4
+    });
   };
 
   handleWowClick = () => {
-    this.setState({ wowCount: this.state.wowCount + 1 });
+    this.setState({
+      wowCount: this.state.wowCount + 1,
+      selectedReaction: 5
+    });
   };
 
   handleAngryClick = () => {
-    this.setState({ angryCount: this.state.angryCount + 1 });
+    this.setState({
+      angryCount: this.state.angryCount + 1,
+      selectedReaction: 6
+    });
   };
 
   render() {
@@ -71,7 +89,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleLikeClick();
             e.preventDefault();
-            this.saveLike(e, 1, reaction);
+            this.saveLike(e, 1, 'like');
           }}
         >
           <span role="img" aria-label="like">
@@ -84,7 +102,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleLoveClick();
             e.preventDefault();
-            this.saveLike(e, 2, reaction);
+            this.saveLike(e, 2, 'love');
           }}
         >
           <span role="img" aria-label="love">
@@ -97,7 +115,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleLaughClick();
             e.preventDefault();
-            this.saveLike(e, 3, reaction);
+            this.saveLike(e, 3, 'laugh');
           }}
         >
           <span role="img" aria-label="laugh">
@@ -110,7 +128,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleCryClick();
             e.preventDefault();
-            this.saveLike(e, 4, reaction);
+            this.saveLike(e, 4, 'cry');
           }}
         >
           <span role="img" aria-label="cry">
@@ -123,7 +141,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleWowClick();
             e.preventDefault();
-            this.saveLike(e, 5, reaction);
+            this.saveLike(e, 5, 'wow');
           }}
         >
           <span role="img" aria-label="wow">
@@ -136,7 +154,7 @@ class Reactions extends Component {
           onClick={(e) => {
             this.handleAngryClick();
             e.preventDefault();
-            this.saveLike(e, 6, reaction);
+            this.saveLike(e, 6, 'angry');
           }}
         >
           <span role="img" aria-label="angry">
