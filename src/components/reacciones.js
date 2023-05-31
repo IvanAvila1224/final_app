@@ -1,33 +1,32 @@
 import React, { Component } from 'react';
-import kafkaService from '../services/kakfa.service';
+import kafkaService from '../services/kafka.service';
 
 class Reactions extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        likeCount: 0,
-        loveCount: 0,
-        laughCount: 0,
-        cryCount: 0,
-        wowCount: 0,
-        angryCount: 0
+      likeCount: 0,
+      loveCount: 0,
+      laughCount: 0,
+      cryCount: 0,
+      wowCount: 0,
+      angryCount: 0
     };
   }
 
-saveLike(e, status,reaction) {
-  
+  saveLike(e, status, reaction) {
+    const { userid, objectid } = this.props; // Obtén el userid y objectid de tus props
+    const reactionid = reaction; // El parámetro reaction ya contiene el reactionid
+
     let data = {
-      id: 0,
-      status: status
+      userid: userid,
+      objectid: objectid,
+      reactionid: reactionid
     };
- 
-    console.log(JSON.stringify(data));
- 
-    kafkaService.reaction(this.props.email,this.props.id,reaction);
+
+    kafkaService.reaction(data); // Llama a la función reaction pasando los datos
     e.preventDefault();
   }
-
-  
 
   handleLikeClick = () => {
     this.setState({ likeCount: this.state.likeCount + 1 });
@@ -54,65 +53,90 @@ saveLike(e, status,reaction) {
   };
 
   render() {
-    const { likeCount, loveCount, laughCount, cryCount , wowCount, angryCount} = this.state;
+    const {
+      likeCount,
+      loveCount,
+      laughCount,
+      cryCount,
+      wowCount,
+      angryCount
+    } = this.state;
 
     return (
       <div className="reactions">
-        <button className='reaccion' onClick={(e) => {
-          this.handleLikeClick();
-          e.preventDefault();
-          this.saveLike(e, 1);
-        }}>
+        <button
+          className="reaccion"
+          onClick={(e) => {
+            this.handleLikeClick();
+            e.preventDefault();
+            this.saveLike(e, 1);
+          }}
+        >
           <span role="img" aria-label="like">
             👍
           </span>
           <span className="count">{likeCount}</span>
         </button>
-        <button className='reaccion' onClick={(e) => {
-          this.handleLoveClick();
-          e.preventDefault();
-          this.saveLike(e, 1);
-        }}>
+        <button
+          className="reaccion"
+          onClick={(e) => {
+            this.handleLoveClick();
+            e.preventDefault();
+            this.saveLike(e, 2);
+          }}
+        >
           <span role="img" aria-label="love">
             ❤️
           </span>
           <span className="count">{loveCount}</span>
         </button>
-        <button className='reaccion' onClick={(e) => {
-          this.handleLaughClick();
-          e.preventDefault();
-          this.saveLike(e, 1);
-        }}>
+        <button
+          className="reaccion"
+          onClick={(e) => {
+            this.handleLaughClick();
+            e.preventDefault();
+            this.saveLike(e, 3);
+          }}
+        >
           <span role="img" aria-label="laugh">
             😂
           </span>
           <span className="count">{laughCount}</span>
         </button>
-        <button className='reaccion' onClick={(e) => {
-          this.handleCryClick();
-          e.preventDefault();
-          this.saveLike(e, 1);
-        }}>
+        <button
+          className="reaccion"
+          onClick={(e) => {
+            this.handleCryClick();
+            e.preventDefault();
+            this.saveLike(e, 4);
+          }}
+        >
           <span role="img" aria-label="cry">
             😢
           </span>
           <span className="count">{cryCount}</span>
         </button>
-        <button className='reaccion' onClick={(e) => {
-          this.handleWowClick();
-          e.preventDefault();
-          this.saveLike(e, 1);
-        }}>
+        <button
+          className="reaccion"
+          onClick={(e) => {
+            this.handleWowClick();
+            e.preventDefault();
+            this.saveLike(e, 5);
+          }}
+        >
           <span role="img" aria-label="wow">
             😮
           </span>
           <span className="count">{wowCount}</span>
         </button>
-        <button className='reaccion' onClick={(e) => {
-          this.handleAngryClick();
-          e.preventDefault();
-          this.saveLike(e, 1);
-        }}>
+        <button
+          className="reaccion"
+          onClick={(e) => {
+            this.handleAngryClick();
+            e.preventDefault();
+            this.saveLike(e, 6);
+          }}
+        >
           <span role="img" aria-label="angry">
             😠
           </span>
