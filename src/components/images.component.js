@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { storage } from "../firebase";
+import { storage } from "../firebase"
 import '../styles/Images.css';
 import ImageCard from './venta.component';
 
@@ -16,8 +16,7 @@ const ImageGallery = (props) => {
 
       for (const image of images.items) {
         const url = await image.getDownloadURL();
-        const metadata = await image.getMetadata();
-        const id = metadata.customMetadata.id;
+        const id = image.name;
         urls.push(url);
         ids.push(id);
       }
