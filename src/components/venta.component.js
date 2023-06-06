@@ -20,8 +20,8 @@ const ImageCard = (props) => {
         </>
       )}
       <div>Cantidad de reacciones: {reactionsCount}</div>
-      <Reactions id={props.imageUrl} email={props.email}/>
-      <CommentBox id={props.imageUrl} email={props.email}/>
+      <Reactions id={props.id} email={props.email} />
+      <CommentBox id={props.id} email={props.email} />
     </div>
     
   );

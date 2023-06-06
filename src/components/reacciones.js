@@ -16,9 +16,9 @@ class Reactions extends Component {
   }
 
   saveLike(e, status, reaction) {
-    let data = {
-      id:0,
-      status:status
+    const data = {
+      id: this.props.id, // Utilizamos el ID del documento en el objeto data
+      status: status
     };
 
     console.log(JSON.stringify(data));
